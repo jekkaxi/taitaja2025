@@ -1,0 +1,113 @@
+body {
+    font-family: "Lexend Deca", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    padding: 0px 50px 0px 50px;
+}
+
+header a {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    font-size: 16px;
+    color: #2B3E50;
+}
+
+button {
+    background-color: #00A1E4;
+    color: #FFFFFF;
+    box-shadow: 0px 5px 5px rgba(43, 62, 80, 0.3);
+    border-radius: 4px;
+    border: none;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #002FE4;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(43, 62, 80, 0.3);
+}
+
+.hero {
+    font-size: 56px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+}
+
+.pelaanyt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    background-image: url("kuvat/tausta2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.pelaavas {
+    max-width: 50%;
+    padding: 50px;
+}
+
+.pelaaoik img {
+    max-width: 100%;
+    height: auto;
+    padding: 50px;
+}
+
+.mitenpelataan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #F9FBFC;
+    min-height: 400px;
+}
+
+.mitenvas {
+    width: 50%;
+}
+
+.mitenvas img {
+    max-width: 100%;
+    height: auto;
+}
+
+.mitenoik {
+    width: 50%;
+    padding-left: 40px;
+}
+
+.valk {
+    background-color: #F9FBFC;
+    color: #2B3E50;
+}
+
+.valk:hover {
+    background-color: #2B3E50;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(43, 62, 80, 0.3);
+}
+
+footer {
+    text-align: center;
+    color: #F9FBFC;
+    background-color: #2B3E50;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
