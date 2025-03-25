@@ -113,7 +113,7 @@ footer {
 }
 
 .game {
-        display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px;
@@ -141,4 +141,10 @@ select {
     padding: 0.5rem;
     
     border: solid 1.5px black;
+}
+
+.keskita {
+    justify-content: center;
+    margin: 0;
+    text-align: center;
 }

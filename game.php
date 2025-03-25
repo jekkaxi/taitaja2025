@@ -1,3 +1,7 @@
+<?php
+include "connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,32 +27,56 @@
                 <h2>
                     Aloite peli
                 </h2>
+                <form action="startgame.php" method="post">
                 <label for="opettaja">Opettaja</label><br>
                 <select name="opettaja" id="opettaja">
-                    <option name="#" id="">Olevi Opettaja</option>
-                    <option name="#" id=""></option>
-                    <option name="#" id=""></option>
+                    <?php
+                    
+                    $sql = "SELECT nimi FROM opettajat";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['nimi'] . "'>" . $row['nimi'] . "</option>";
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+
+                    ?>
                 </select><br><br>
 
                 <label for="kategoria">Kategoria</label><br>
                 <select name="kategoria" id="kategoria">
-                    <option name="#" id="">Tietokoneet ja ohjelmointi</option>
-                    <option name="#" id=""></option>
-                    <option name="#" id=""></option>
+                    <?php
+                    
+                    $sql = "SELECT nimi FROM kategoriat";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['nimi'] . "'>" . $row['nimi'] . "</option>";
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+
+                    ?>
                 </select><br><br>
 
-                <label for="kysymykset">Valitse kysymysten määrä</label><br>
+                <label for="kysymykset">Valitse kysymysten määrä</label><br><br>
 
-                <input type="radio" name="kysymykset" id="kysymykset1">
+                <input type="radio" name="kysymykset" id="kysymykset1" value="Lyhyt">
                 <label for="lyhyt">Lyhyt (5)</label><br>
 
-                <input type="radio" name="kysymykset" id="kysymykset2">
+                <input type="radio" name="kysymykset" id="kysymykset2" value="Keskipitkä" checked="checked">
                 <label for="lyhyt">Keskipitkä (10)</label><br>
 
-                <input type="radio" name="kysymykset" id="kysymykset3">
+                <input type="radio" name="kysymykset" id="kysymykset3" value="Pitkä">
                 <label for="lyhyt">Pitkä (15)</label><br><br>
 
-                <button>Aloita peli</button>
+                <a href="startgame.php"><button>Aloita peli</button></a>
+                </form>
             </div>
             <div class="gameoik">
                 <img src="kuvat/game.png" alt="Pelikuva">
