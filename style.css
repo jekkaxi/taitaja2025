@@ -111,3 +111,26 @@ footer {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #F9FBFC;
+    min-height: 400px;
+}
+
+.gamevas {
+    width: 50%;
+    padding-left: 40px;
+}
+
+.gameoik {
+    width: 50%;
+}
+
+.gameoik img {
+    max-width: 100%;
+    height: auto;
+}
