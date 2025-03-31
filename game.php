@@ -20,7 +20,7 @@ include "connect.php";
                 <h1>
                     TAITAJA TIETOTESTI
                 </h1>
-                <a href="#">Kirjaudu sisään</a>
+                <a href="login.html">Kirjaudu sisään</a>
         </header>
         <div class="game">
             <div class="gamevas">
@@ -32,12 +32,12 @@ include "connect.php";
                 <select name="opettaja" id="opettaja">
                     <?php
                     
-                    $sql = "SELECT nimi FROM opettajat";
+                    $sql = "SELECT username FROM teachers";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['nimi'] . "'>" . $row['nimi'] . "</option>";
+                            echo "<option value='" . $row['username'] . "'>" . $row['username'] . "</option>";
                         }
                     } else {
                         echo "0 results";
@@ -50,12 +50,12 @@ include "connect.php";
                 <select name="kategoria" id="kategoria">
                     <?php
                     
-                    $sql = "SELECT nimi FROM kategoriat";
+                    $sql = "SELECT name FROM categories";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['nimi'] . "'>" . $row['nimi'] . "</option>";
+                            echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
                         }
                     } else {
                         echo "0 results";
@@ -74,6 +74,7 @@ include "connect.php";
 
                 <input type="radio" name="kysymykset" id="kysymykset3" value="Pitkä">
                 <label for="lyhyt">Pitkä (15)</label><br><br>
+                <input type="hidden" name="kysymysnr" value=1>
 
                 <a href="startgame.php"><button>Aloita peli</button></a>
                 </form>

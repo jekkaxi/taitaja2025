@@ -20,39 +20,43 @@ include "connect.php";
                 <h1>
                     TAITAJA TIETOTESTI
                 </h1>
-                <a href="#">Kirjaudu sisään</a>
+                <a href="login.html">Kirjaudu sisään</a>
         </header>
 
         <?php
         //tulostaa PHP:lla mitä käyttäjä on valinuut viime sivulla
-        echo $_POST['opettaja']; echo "<br>";
-        echo $_POST['kategoria']; echo "<br>";
-        echo $_POST['kysymykset'];
+        //echo $_POST['opettaja']; echo "<br>";
+        //echo $_POST['kategoria']; echo "<br>";
+        //echo $_POST['kysymykset'];
         ?>
         <div class="keskita">
+            <?php
+            $kysymysnr = $_POST['kysymysnr'];
+            ?>
             <p>
-                kysymys 1/10
+                kysymys <?php echo $kysymysnr;?>/10
             </p>
             <p>
                 pisteet: 3
             </p>
 
             <h1>Mitä CSS tekee verkkosivulla?</h1>
+            <table>
+                <tr>
+                    <td><input type="radio" name="vaihtoehto1" id="vastaus1"></td>
+                    <td><p>Määrittää ulkoasun</p></td>
 
-            <div class="vieressa">
-                <input type="radio" name="vastaus" id="vastaus1" value="Lyhyt">
-                <label for="lyhyt">Määrittää ulkoasun</label>
+                    <td><input type="radio" name="vaihtoehto2" id="vastaus2"></td>
+                    <td><p>Tallentaa tietoja</p></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="vaihtoehto3" id="vastaus3"></td>
+                    <td><p>Lisää toiminnallisuutta</p></td>
 
-                <input type="radio" name="vastaus" id="vastaus2" value="Keskipitkä">
-                <label for="lyhyt">Tallentaa tietoja</label>
-            </div>
-            <div class="vieressa">
-                <input type="radio" name="vastaus" id="vastaus3" value="Keskipitkä">
-                <label for="lyhyt">Lisää toiminnallisuutta</label>
-
-                <input type="radio" name="vastaus" id="vastaus4" value="Pitkä">
-                <label for="lyhyt">Hoitaa tietoturvaa</label>
-            </div><br><br>
+                    <td><input type="radio" name="vaihtoehto4" id="vastaus4"></td>
+                    <td><p>Hoitaa tietoturvaa</p></td>
+                </tr><br><br>
+            </table>
             <a href="#"><button>Vastaa</button></a><br><br>
         </div>
         <footer>
