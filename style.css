@@ -135,7 +135,7 @@ footer {
     height: auto;
 }
 
-select {
+select, .highscore {
     width: 200px;
     max-width: 300px;
     padding: 0.5rem;
@@ -154,3 +154,6 @@ table {
     margin-right: auto;
 }
 
+.pelih1 {
+    text-align: center;
+}

@@ -32,12 +32,12 @@ include "connect.php";
                 <select name="opettaja" id="opettaja">
                     <?php
                     
-                    $sql = "SELECT username FROM teachers";
+                    $sql = "SELECT * FROM teachers";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['username'] . "'>" . $row['username'] . "</option>";
+                            echo "<option value='" . $row['id'] . "'>" . $row['username'] . "</option>";
                         }
                     } else {
                         echo "0 results";
@@ -50,12 +50,12 @@ include "connect.php";
                 <select name="kategoria" id="kategoria">
                     <?php
                     
-                    $sql = "SELECT name FROM categories";
+                    $sql = "SELECT * FROM categories";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+                            echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
                         }
                     } else {
                         echo "0 results";
@@ -66,13 +66,13 @@ include "connect.php";
 
                 <label for="kysymykset">Valitse kysymysten määrä</label><br><br>
 
-                <input type="radio" name="kysymykset" id="kysymykset1" value="Lyhyt">
+                <input type="radio" name="kysymykset" id="kysymykset1" value="6">
                 <label for="lyhyt">Lyhyt (5)</label><br>
 
-                <input type="radio" name="kysymykset" id="kysymykset2" value="Keskipitkä" checked="checked">
+                <input type="radio" name="kysymykset" id="kysymykset2" value="11" checked="checked">
                 <label for="lyhyt">Keskipitkä (10)</label><br>
 
-                <input type="radio" name="kysymykset" id="kysymykset3" value="Pitkä">
+                <input type="radio" name="kysymykset" id="kysymykset3" value="16">
                 <label for="lyhyt">Pitkä (15)</label><br><br>
                 <input type="hidden" name="kysymysnr" value=1>
 
