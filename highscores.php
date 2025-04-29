@@ -22,7 +22,7 @@
         </div>
 
 
-        <button>Kirjaudu sisään</button>
+        
         <footer>
             <h2>
                 Taitaja2025 -semifinaali

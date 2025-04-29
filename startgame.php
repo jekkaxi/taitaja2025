@@ -91,7 +91,9 @@ while ($row = $result->fetch_assoc()) {
                     document.getElementById('question-container').innerHTML = `<center><p>Pisteet: ${score}/<?php echo $number_of_questions-1;?></p></center>`;
                     document.getElementById('next-button').style.display = 'none'; // Piilota "Seuraava" nappi pelin lopussa
                     document.getElementById('kysymykset').style.display = 'none';
-                    document.getElementById('highscore').style.display = 'block';
+                    
+                    document.getElementById('scoreForm').style.display = 'block';
+                    document.getElementById('finalScore').value = score;
                 }
             }
 
@@ -103,6 +105,17 @@ while ($row = $result->fetch_assoc()) {
                 document.getElementById('next-button').style.display = 'inline'; // Näytä "Seuraava" nappi aina, kun vastaus on valittu
             });
         </script>
+
+        <center>
+            <form id="scoreForm" action="save_score.php" method="POST" style="display:none;">
+                <input type="hidden" name="teacher_id" value="<?php echo $teacher_id; ?>">
+                <input type="hidden" name="category_id" value="<?php echo $category_id; ?>">
+                <input type="hidden" name="number_of_questions" value="<?php echo $number_of_questions; ?>">
+                <input type="hidden" name="score" id="finalScore" value="">
+                <input type="text" name="username2" placeholder="Kirjoita nimesi" required>
+                <input type="submit" value="Tallenna tulos">
+            </form>
+        </center><br><br>
         
         <footer>
             <h2>
