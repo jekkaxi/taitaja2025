@@ -7,7 +7,7 @@ $username2 = $_POST['username2'];
 
 include "connect.php";
 
-$sql = "INSERT INTO highscores (category_id, teacher_id, number_of_questions, score, username2)
+$sql = "INSERT INTO highscores (category_id, teacher_id, number_of_questions, score, username)
 VALUES ('$category_id', '$teacher_id', '$number_of_questions', '$score', '$username2')";
 
 if ($conn->query($sql) === TRUE) {
@@ -38,8 +38,8 @@ if ($conn->query($sql) === TRUE) {
                 <h1>High Scores</h1>
             
             <?php
-            $laskuri = 0;
-            $sgl1 = "SELECT * FROM highsoces WHERE number_of_questions = 5 ORDER BY score DESC LIMIT 5";
+            $tietotesti = 0;
+            $sql = "SELECT * FROM highscores WHERE number_of_questions = 5 ORDER BY score DESC LIMIT 5";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -48,21 +48,21 @@ if ($conn->query($sql) === TRUE) {
              echo "<table>";
 
                 while($row = $result->fetch_assoc()) {
-                    $laskuri++;
-                    echo '<td>' . $laskuri . "</td><td>" . $row['username'] . '</td><td>' $row["score"] . '</td><td>' . 'Lyhyt' . '</td><tr>';
+                    $tietotesti++;
+                    echo '<td>' . $tietotesti . "</td><td>" . $row['username'] . '</td><td>' . $row["score"] . '</td><td>' . 'Lyhyt' . '</td><tr>';
 
                 }
 
                     echo "</table>";
-                    echo "<br><br>"
+                    echo "<br><br>";
             } else {
-            echo "Ei vielä tuloksia lyhyessä kategoriassa<br><br>"
+            echo "Ei vielä tuloksia lyhyessä kategoriassa<br><br>";
             }
             ?>
 
         <?php
-            $laskuri = 0;
-            $sgl1 = "SELECT * FROM highsoces WHERE number_of_questions = 10 ORDER BY score DESC LIMIT 5";
+            $tietotesti = 0;
+            $sql = "SELECT * FROM highscores WHERE number_of_questions = 10 ORDER BY score DESC LIMIT 5";
             $result = $conn->query($sql);
         
             if ($result->num_rows > 0) {
@@ -71,21 +71,21 @@ if ($conn->query($sql) === TRUE) {
             echo "<table>";
         
             while($row = $result->fetch_assoc()) {
-                $laskuri++;
-                echo '<td>' . $laskuri . "</td><td>" . $row['username'] . '</td><td>' $row["score"] . '</td><td>' . 'Lyhyt' . '</td><tr>';
+                $tietotesti++;
+                echo '<td>' . $tietotesti . "</td><td>" . $row['username'] . '</td><td>' . $row["score"] . '</td><td>' . 'Keskipitkä' . '</td><tr>';
         
             }
         
                 echo "</table>";
-                echo "<br><br>"
+                echo "<br><br>";
             } else {
-                echo "Ei vielä tuloksia keskipitkässä kategoriassa<br><br>"
+                echo "Ei vielä tuloksia keskipitkässä kategoriassa<br><br>";
         }
         ?>
 
         <?php
-            $laskuri = 0;
-            $sgl1 = "SELECT * FROM highsoces WHERE number_of_questions = 15 ORDER BY score DESC LIMIT 5";
+            $tietotesti = 0;
+            $sql = "SELECT * FROM highscores WHERE number_of_questions = 15 ORDER BY score DESC LIMIT 5";
             $result = $conn->query($sql);
         
             if ($result->num_rows > 0) {
@@ -94,15 +94,15 @@ if ($conn->query($sql) === TRUE) {
                 echo "<table>";
         
                 while($row = $result->fetch_assoc()) {
-                    $laskuri++;
-                    echo '<td>' . $laskuri . "</td><td>" . $row['username'] . '</td><td>' $row["score"] . '</td><td>' . 'Lyhyt' . '</td><tr>';
+                    $tietotesti++;
+                    echo '<td>' . $tietotesti . "</td><td>" . $row['username'] . '</td><td>' . $row["score"] . '</td><td>' . 'Pitkä' . '</td><tr>';
         
                 }
         
                     echo "</table>";
-                    echo "<br><br>"
+                    echo "<br><br>";
             } else {
-            echo "Ei vielä tuloksia pitkässä kategoriassa<br><br>"
+            echo "Ei vielä tuloksia pitkässä kategoriassa<br><br>";
         }
         ?>
         <center>

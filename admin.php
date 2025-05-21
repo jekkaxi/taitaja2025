@@ -16,18 +16,27 @@
             <h1>
                 TAITAJA TIETOTESTI
             </h1>
-            <a href="login.html">Kirjaudu sisään</a>
+            <a href="login.html">Kirjaudu ulos</a>
         </header>
-        <div class="keskita">
-            <h1>
-                Kirjaudu sisään
-            </h1>
-
-            <input type="text" placeholder="Syötä käyttäjätunnus"><br><br>
-            <input type="text" placeholder="Syötä salasana"><br><br>
-
-            <a href="admin.php"><button>Kirjaudu sisään</button><br><br></a>
-        </div>
+        
+        <h1>
+            Kategoriat
+        </h1>
+        <p>
+            Maantieto
+        </p>
+        <p>
+            Historia
+        </p>
+        <p>
+            Matematiikkaa
+        </p>
+        <p>
+            Luonto ja ympäristö
+        </p>
+        <p>
+            Tietokoneet ja ohjelmointi
+        </p>
         <footer>
             <h2>
                 Taitaja2025 -semifinaali
